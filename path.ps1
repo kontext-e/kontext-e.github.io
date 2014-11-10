@@ -1,0 +1,1 @@
+$env:Path = "C:\p\Ruby21-x64\bin;C:\p\RubyDevKit\bin;C:\Program Files\nodejs";
