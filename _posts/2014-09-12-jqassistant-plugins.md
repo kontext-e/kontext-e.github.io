@@ -50,6 +50,6 @@ Für die Kontext E Plugins für jQAssistant wurde noch keine Lizenz deklariert, 
 Beziehen und benutzen
 ---------------------
 
-Die Kontext E jQAssistant Plugins werden auf GitHub gehostet. Bis eine offizielle Version über Maven Central beziehbar ist, muss man sich den Quellcode von https://github.com/kontext-e/jqassistant-plugins besorgen und per gradlew selbst bauen. Voraussetzung ist, dass der aktuelle Snapshot von jQAssistant (http://jqassistant.org) im lokalen Maven Repository installiert ist.
+Die Kontext E jQAssistant Plugins werden auf GitHub gehostet. Bis eine offizielle Version über Maven Central beziehbar ist, muss man sich den Quellcode von [GitHub](https://github.com/kontext-e/jqassistant-plugins) besorgen und per gradlew selbst bauen. Voraussetzung ist, dass der aktuelle Snapshot von [jQAssistant] (http://jqassistant.org) im lokalen Maven Repository installiert ist.
 
 Im Zielprojekt muss man dann jQAssistant und die Plugins als Dependencies eintragen. jQAssistant selbst kommt mit einer engen Maven-Integration. Kontext E hat einen Kommandozeilen-Runner gespendet. Somit kann man seine Projekte auch per IDE, mit einem Batch-Skript, per ant, gradle oder von anderen Tools und eigenen Projekten aus starten.
