@@ -27,6 +27,11 @@ unfortunately there are enough of them. Otherwise this article would make no sen
 It comes with some 2500 classes and not a single Unit Test. For playing around with it I checked out the source and put it into a 
 [GitHub repo](https://github.com/jensnerche/plantuml).
 
+Now we are ready for the real hands-on experience. We will add a rudimentary test infrastructure so that there is at least one Unit Test to go on with.
+Than we add the static analysis and the test coverage checker. When both is in place, we bring it together in the same database and create coverage rules
+using database queries. Last but not least we will have a look on various ways for further improvements.
+
+Ok, let's begin!
 
 # Add rudimentary test infrastructure
 * pom: add a dependency for junit, plugins surefire and failsafe plugins
@@ -74,3 +79,7 @@ It comes with some 2500 classes and not a single Unit Test. For playing around w
 
 # Where to go
 * using the git meta data
+* employ FindBugs
+* use also Checkstyle
+* ask PMD for an opinion
+* define some architectural documentation with PlantUML and check the consistency with the real architecture
