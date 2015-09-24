@@ -1,7 +1,10 @@
-* maven
-* jQAssistant
-* JaCoCo
-* Kontext E JaCoCo Plugin for jQAssistant
+---
+layout: post
+title: Beginning Unit Tests in a brownfield project
+description: "Beginning Unit Tests in a brownfield project"
+tags: [en, jQAssistant, PlantUML, JaCoCo]
+---
+
 
 # Motivation
 Let's assume you visited a [Code Retreat](http://coderetreat.org/), read [a book](http://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530),
@@ -276,25 +279,55 @@ the reviewed methods is complex but very readable and not really error prone, yo
 
 
 # Improve the coverage rules
-* just declare the complexity ranges and their coverage thresholds
+If we look at our test coverage rules, we see lots of duplication. Only some numbers change. We employ the Separation of Concerns
+principle and separate what changes - the test coverage threshold for a range of branches per method - from what is invariant. We
+declare the complexity ranges and their coverage thresholds in separated concepts and use a common query for all ranges. This looks like this:
 
-# Where to go
-## Add other dependencies for tests
-* hamcrest matcher
-* mocking framework
-* mockito
-* jmockit if the code is very bad
+        <concept id="jacoco:TestCoverageMediumRange">
+            <description>Define ranges for test coverage.</description>
+            <cypher><![CDATA[
+            CREATE
+                (n:TestCoverageRange {min : 40, max : 49, coverage : 80 })
+            RETURN
+                n
+        ]]></cypher>
+        </concept>
+    
+        <concept id="jacoco:TestCoverageHighRange">
+            <description>Define ranges for test coverage.</description>
+            <cypher><![CDATA[
+            CREATE
+                (n:TestCoverageRange { min : 50, max : 999999, coverage : 90 })
+            RETURN
+                n
+        ]]></cypher>
+        </concept>
 
-## Iterate and improve
-* for every iteration, play again with the numbers and/or excluded packages and classes to find a new set of testworthy methods
 
-## Tackle the non-technical problems
-* resistence by team members
-* resistence by management
+    <constraint id="test:TestCoverageForConfiguredComplexity">
+        <requiresConcept refId="jacoco:TestCoverageMediumRange"/>
+        <requiresConcept refId="jacoco:TestCoverageHighRange"/>
+        <description>...</description>
+        <cypher><![CDATA[
+        MATCH (tcr:TestCoverageRange)
+        WITH tcr.min AS mincomplexity, tcr.max as maxcomplexity, tcr.coverage AS coveragethreshold
+        MATCH (cl:JacocoClass)--(m:JacocoMethod)--(c:JacocoCounter {type: 'COMPLEXITY'})
+        WHERE c.missed+c.covered >= mincomplexity AND c.missed+c.covered <= maxcomplexity
+        AND NOT(m.signature ='boolean equals(java.lang.Object)') AND NOT(m.signature ='int hashCode()')
+        AND NOT(cl.fqn =~ 'net.sourceforge.plantuml.sudoku.dlx_solver.*')
+        WITH m AS method, cl.fqn AS fqn, m.signature AS signature, c.missed+c.covered AS complexity, coveragethreshold as coveragethreshold
+        MATCH (m)--(branches:JacocoCounter {type: 'BRANCH'})
+        WHERE m=method AND branches.covered*100/(branches.covered+branches.missed) < coveragethreshold
+        RETURN complexity, coveragethreshold, branches.covered*100/(branches.covered+branches.missed) AS coverage, fqn, signature
+        ORDER BY complexity, coverage
+        ]]></cypher>
+    </constraint>
 
-## Other jQA plugins
-* using the git meta data
-* employ FindBugs
-* use also Checkstyle
-* ask PMD for an opinion
-* define some architectural documentation with PlantUML and check the consistency with the real architecture
+In the constraint, I excluded the package 'net.sourceforge.plantuml.sudoku.dlx_solver' from the check. I doubt that this
+is relevant for drawing UML diagrams.
+
+Now all is set up for writing Unit Tests and employing the CI server to watch out for missing tests. Ok ok, you may want to
+add more supporting libraries for testing like [Hamcrest Matchers](http://hamcrest.org/JavaHamcrest) or a mocking framework.
+And for every iteration, play again with the numbers and/or excluded packages and classes to find a new set of testworthy methods.
+
+You find a copy of the PlantUML project with all the stuff discussed here on [my GitHub repo](https://github.com/jensnerche/plantuml).
