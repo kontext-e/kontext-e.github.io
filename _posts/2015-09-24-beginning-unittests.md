@@ -330,4 +330,5 @@ Now all is set up for writing Unit Tests and employing the CI server to watch ou
 add more supporting libraries for testing like [Hamcrest Matchers](http://hamcrest.org/JavaHamcrest) or a mocking framework.
 And for every iteration, play again with the numbers and/or excluded packages and classes to find a new set of testworthy methods.
 
-You find a copy of the PlantUML project with all the stuff discussed here on [my GitHub repo](https://github.com/jensnerche/plantuml).
+You find a copy of the PlantUML project with all the stuff discussed here on [my GitHub repo](https://github.com/jensnerche/plantuml/tree/unittest)
+into the branch 'unittest'.
