@@ -24,7 +24,7 @@ technical side of getting started with Unit Tests in a brownfield project. The b
 there is already a [maven](http://maven.apache.org) build in place, but not a single test yet. Then JaCoCo and the [Kontext E](http://www.kontext-e.de)
 JaCoCo plug-in for jQAssistant were added to the project and some basic rules implemented.
 
-# Find an example project
+## Find an example project
 First let's find some example project for this exercise. You think there is no such project with a considerable size anymore? Not true mate, 
 unfortunately there are enough of them. Otherwise this article would make no sense, no? So let's choose [PlantUML](http://sourceforge.net/projects/plantuml/).
 It comes with some 2500 classes and not a single Unit Test. For playing around with it I checked out the source and put it into a 
