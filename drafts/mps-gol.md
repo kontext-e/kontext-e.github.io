@@ -84,16 +84,50 @@ we may declare more than one representation for a concept, e.g. for color-blind 
 only one editor. We also see that the #alias# should be shown. Alias? Yes, please go back to the Alive Expression picture.
 There it is: 'alias: alive'. But how comes the color in? We can declare styles in a different tool window:
 
-![Alive Expression Editor Style](AliveExpression_Editor_Inspector.png)
+![Alive Expression Editor Style](/images/gol/AliveExpression_Editor_Inspector.png)
 
 And the same goes for Dead Expression with the style 'text-foreground-color : red'.
 
 ## Decision Table
+Now we come to one of the most powerful and most interesting things of custom representations via own 'editors'. 
+We are not limited to text like in normal IDEs. We could define also - tables! And not only tables, but even
+Java Swing components are allowed. So we could replace the alive and dead concepts with checkboxes. Or add some
+JavaDoc with explaining pictures. But for now let's focus on the tables. In the nextGeneration(...) method we see
+a decision table. A content cell from the middle is taken if the column header and the row header both evaluate to true.
+If no constellation evaluates to true, the default value is taken. In fact, this decision table represents the core
+algorithm of the Game of Life:
+
+![Decision Table](/images/gol/DecisionTable.png)
+
+Depending on if the current generation contains a cell and how many neighbors it has, it will be added to the next
+generation or not. And because the decision table also extends the Expression and the Type is declared boolean,
+the table can be used as condition in a regular if statement.
 
 ## Mapping Table
+In the neighbors() method we see again a table. This time no decision table but a mapping table. A single cell
+and a table were combined:
+
+![Mapping Table](/images/gol/MappingTable.png)
+
+The bold plus sign indicates that it is no normal summation operation but an adapted version for the table: the left
+side of the plus - here a variable named 'cell' of type Coordinate - is added to every entry in the table. This results
+into nine new Coordinates. The middle one is the original cell itself, so it is no neighbor and will be subtracted again.
 
 ## Extending Operations: plus and minus
+Subtracted? A single value via minus operation from a collection in Java? This is only possible because we can also
+put additional semantics on operations as language extensions. Once again the typesystem feature of MPS
+comes to help and let's us overload operations:
+
+![Overloaded Operations](/images/gol/OverloadedOperations.png)
+
+The first of the two new rules declares for plus and minus operators that the summation and subtraction of two things
+of type Coordinate is allowed and results into a Coordinate type.
+
+The second new rule declares that a subtraction of a Coordinate from a Coordinate array is allowed and results into a 
+Coordinate array. 
 
 ## Semantics: Generate Java code
+
+
 
 ## Conclusions
