@@ -5,7 +5,7 @@ description: "Beginning Unit Tests in a brownfield project"
 tags: [en, jQAssistant, PlantUML, JaCoCo]
 ---
 
-
+1
 ## Motivation
 Let's assume you visited a [Code Retreat](http://coderetreat.org/), read [a book](http://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530),
 visited a workshop or a conference - or whatever. Now you are burning to introduce Unit Tests into your project - and hit the wall hard. Yes, you are
