@@ -6,7 +6,7 @@ tags: [en, jQAssistant, PlantUML, JaCoCo]
 ---
 
 
-## Motivations
+## Motivation
 Let's assume you visited a [Code Retreat](http://coderetreat.org/), read [a book](http://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530),
 visited a workshop or a conference - or whatever. Now you are burning to introduce Unit Tests into your project - and hit the wall hard. Yes, you are
 in a brownfield project. Who is not? Yes, there is no fairy offering you three wishes. Who saw one? So there is no easy way of transforming a 
