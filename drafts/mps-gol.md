@@ -1,41 +1,25 @@
 ---
 layout: post
-title: Game of Life in Java on Steroids
-description: "Game of Life in Java on Steroids"
-tags: [Game of Life, MPS, Java, Language Workbench, Software Craftsmanship]
+title: bla
+description: "bla"
+tags: [en, jQAssistant, PlantUML, JaCoCo]
 ---
 
 
-## Code Retreats and the Game of Life
-[Code Retreats](http://coderetreat.org/) are a good way to improve our skills as
-[Software Craftsmen](http://manifesto.softwarecraftsmanship.org/). Soon there is
-the #gdcr15, reason enough to make the [Game of Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life)
-a topic of a blog post.
+## Motivation
+Let's assume you visited a [Code Retreat](http://coderetreat.org/), read [a book](http://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530),
+visited a workshop or a conference - or whatever. Now you are burning to introduce Unit Tests into your project - and hit the wall hard. Yes, you are
+in a brownfield project. Who is not? Yes, there is no fairy offering you three wishes. Who saw one? So there is no easy way of transforming a 
+we-are-not-writing-unit-tests-project into a TDD project. Where to begin? You could just starting with TDD from now on for every new line of code.
+That is one way and not the worst one. (This would be to not doing Unit Tests.) But there is an alternative: find methods or classes in the project
+which need Unit Tests most and start with them. It's not really hard to do that because [JaCoCo](http://eclemma.org/jacoco/) provides all you need:
+the test coverage with covered and missed branches. There is an interesting correlation between the number of branches of a method and the test-me-begging.
+Every branch adds a voice in the chorus singing test test me song. Now JaCoCo generates reports not only as HTML but also as CSV and XML. You could just
+use a scripting language of your choice, invest some [Mana](https://en.wikipedia.org/wiki/Magic_%28gaming%29) and find what you are looking for.
+Indeed I was quite successful with Groovy parsing the XML report, running in an ant build on the CI server as a watchdog for test coverage.
 
-Here is an example in Java:
-![Game of Life in Java](/images/mps-gol.png)
-
-## Java. Java? Java + extensions!
-Hm, Java? That is not Java. Well, it looks like somewhat like Java, but that
-tables, that colored constants, that initialization of the generation array,
-that operations? It's not hard to notice: there are some extensions made to Java.
-That takes for sure some years or at least months for a single person to create
-such extensions! No, not really. Uh yeah, if you take the [OpenJDK](http://openjdk.java.net/)
-and put your extensions there - but we don't. We take a [Language Workbench](http://www.martinfowler.com/articles/languageWorkbench.html).
-To be more precise: we take the [MPS](https://www.jetbrains.com/mps/) Language Workbench.
-Now it is easy to [modularize and put together](https://www.youtube.com/watch?v=lNMRMZk8KBE) programming languages.
-
-In the following sections we will have a closer look on each of the new language concepts.
-You can get the source [on my GitHub account](https://github.com/jensnerche/mps-gol).
-
-## New Type: Coordinate
-
-## Syntax sugar: alive and dead
-
-## Decision Table
-
-## Mapping Table
-
-## Extending Operations: plus and minus
-
-## Conclusions
+But technology gets better. Now there is no need for fiddling around with XML and scripts anymore - a simple database query does all the work.
+And it offers also the great power of combining the test coverage with other metrics and static code analysis. In this article I'll explain the
+technical side of getting started with Unit Tests in a brownfield project. The basis is once again [jQAssistant](http://jqassistant.org/). I assume
+there is already a [maven](http://maven.apache.org) build in place, but not a single test yet. Then JaCoCo and the [Kontext E](http://www.kontext-e.de)
+JaCoCo plug-in for jQAssistant were added to the project and some basic rules implemented.
