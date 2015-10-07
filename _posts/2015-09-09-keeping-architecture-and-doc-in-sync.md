@@ -2,6 +2,7 @@
 layout: post
 title: How to keep architecture and it's documentation in sync
 description: "How to keep architecture and it's documentation in sync"
+author: jens_nerche
 tags: [en, jQAssistant, Neo4j, PlantUML, Asciidoc, XMI]
 ---
 

@@ -2,6 +2,7 @@
 layout: post
 title: An IntelliJ IDEA Plugin for jQAssistant
 description: "Find classes using Neo4j Cypher queries against an existing jQAssistant database"
+author: jens_nerche
 tags: [en, jQAssistant, IDEA, Plugin]
 ---
 

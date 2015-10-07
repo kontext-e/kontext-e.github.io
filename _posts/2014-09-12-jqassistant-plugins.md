@@ -2,6 +2,7 @@
 layout: post
 title: Plugins für jQAssistant
 description: "Dieser Artikel stellt jQAssistant kurz vor und erläutert, welche Erweiterungen Kontext E bereitstellt."
+author: jens_nerche
 tags: [jQAssistant]
 ---
 

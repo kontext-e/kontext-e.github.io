@@ -2,6 +2,7 @@
 layout: post
 title: Coding Dojos
 description: "Programmierübungen zur firmeninternen Weiterbildung"
+author: jens_nerche
 tags: [softwarecraftsmanship]
 ---
 

@@ -2,6 +2,7 @@
 layout: post
 title: Beginning Unit Tests in a brownfield project
 description: "Beginning Unit Tests in a brownfield project"
+author: jens_nerche
 tags: [en, jQAssistant, PlantUML, JaCoCo]
 ---
 
