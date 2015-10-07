@@ -31,6 +31,16 @@
           <h1 class="entry-title"><a href="{{ site.url }}{{ page.url }}" rel="bookmark" title="{{ page.title }}">{{ page.title }}</a></h1>
         {% endif %}
         <h2>{{ page.date | date: "%B %d, %Y" }}</h2>
+        <!-- Look the author details up from the site config. -->
+        {% assign author = site.data.authors[page.author] %}
+
+        <!-- Output author details if some exist. -->
+        {% if author %}
+    <h3>
+        <!-- Personal Info. -->
+        Written by {{ author.name }}
+    </h3>
+        {% endif %}
         {% if site.reading_time %}
         <p class="entry-reading-time">
           <i class="fa fa-clock-o"></i>
@@ -49,7 +59,7 @@
         <span class="author vcard"><span class="fn"><a href="{{ site.url }}/about/" title="About {{ site.owner.name }}">{{ site.owner.name }}</a></span></span>
         {% if page.share != false %}{% include social-share.html %}{% endif %}
       </footer>
-    </div><!-- /.entry-content -->
+-+-*-+-9*+-9*/9-/986+98*//////98/////////////////////////9    </div><!-- /.entry-content -->
     {% if page.comments != false %}<section id="disqus_thread"></section><!-- /#disqus_thread -->{% endif %}
     {% if site.related_posts.size %}{% include read-more.html %}{% endif %}
   </article>
