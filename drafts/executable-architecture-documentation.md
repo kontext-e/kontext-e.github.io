@@ -5,7 +5,7 @@ author: jens_nerche
 tags: [MPS, Java, Language Workbench, arc42, Asciidoc, PlantUML, Continuous Integration, jQAssistant, Architecture, Test]
 
 
-## Motivation
+## Current state
 In a former blog post
 [How to keep architecture and it's documentation in sync](http://techblog.kontext-e.de/keeping-architecture-and-doc-in-sync/)
 I described how you could 'execute' an architecture documentation as a test.
@@ -18,6 +18,7 @@ But the diagrams are just pictures (or text to be precise), not models. You cann
 * reference a class define in a class diagram in a sequence diagram
 * reference artifacts of a diagram in the text as a real link between them
 * find usages of diagram artifacts
+* do lots of other interesting stuff
 
 ## Make it better
 
@@ -32,3 +33,7 @@ But the diagrams are just pictures (or text to be precise), not models. You cann
 [jQAssistant](http://jqassistant.org)
 
 [Kontext E Plug-ins for jQAssistant](https://github.com/kontext-e/jqassistant-plugins)
+
+[Neo4j](http://neo4j.com/)
+
+
