@@ -30,6 +30,9 @@ But the diagrams are just pictures (or text to be precise), not models. You cann
 
 [Asciidoc version of arc42 template](https://github.com/arc42/arc42-template)
 
+[asciidoc-plantuml](https://code.google.com/p/asciidoc-plantuml/)
+AsciiDoc PlantUML filter plugin
+
 [jQAssistant](http://jqassistant.org)
 
 [Kontext E Plug-ins for jQAssistant](https://github.com/kontext-e/jqassistant-plugins)
@@ -37,3 +40,6 @@ But the diagrams are just pictures (or text to be precise), not models. You cann
 [Neo4j](http://neo4j.com/)
 
 
+## Vision
+Give the software architects the most flexible and powerful tool for defining an architecture and crafting it into code.
+The combination of MPS, jQAssistant, and Neo4j is the best match for this. 
