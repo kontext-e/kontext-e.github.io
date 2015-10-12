@@ -22,17 +22,24 @@ But the diagrams are just pictures (or text to be precise), not models. You cann
 
 ## Make it better
 
-[MPS language for Asciidoc](https://github.com/kontext-e/mps-asciidoc)
-
+### Make a model of Package Diagrams
 [MPS language for PlantUML](https://github.com/kontext-e/mps-plantuml)
 
-[MPS project for Executable Architecture Documentation](https://github.com/kontext-e/mps-ead)
 
-[Asciidoc version of arc42 template](https://github.com/arc42/arc42-template)
+### Bring the documentation to the same platform
+[MPS language for Asciidoc](https://github.com/kontext-e/mps-asciidoc)
+
+### Join both
+[MPS project for Executable Architecture Documentation](https://github.com/kontext-e/mps-ead)
 
 [asciidoc-plantuml](https://code.google.com/p/asciidoc-plantuml/)
 AsciiDoc PlantUML filter plugin
 
+### Use an accepted template for Architecture Documentation: arc42
+[Asciidoc version of arc42 template](https://github.com/arc42/arc42-template)
+
+
+### Execute
 [jQAssistant](http://jqassistant.org)
 
 [Kontext E Plug-ins for jQAssistant](https://github.com/kontext-e/jqassistant-plugins)
