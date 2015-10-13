@@ -32,14 +32,25 @@ But the diagrams are just pictures (or text to be precise), not models. You cann
 ### Join both
 [MPS project for Executable Architecture Documentation](https://github.com/kontext-e/mps-ead)
 
-[asciidoc-plantuml](https://code.google.com/p/asciidoc-plantuml/)
-AsciiDoc PlantUML filter plugin
 
 ### Use an accepted template for Architecture Documentation: arc42
 [Asciidoc version of arc42 template](https://github.com/arc42/arc42-template)
 
 
-### Execute
+### Integrate into Gradle build
+[Installing and Using the Asciidoctor Gradle Plugin](http://asciidoctor.org/docs/asciidoctor-gradle-plugin/)
+
+[Asciidoctor Diagram](http://asciidoctor.org/docs/asciidoctor-diagram/)
+
+[Gist with example of integrating Asciidoctor in Gradle](https://gist.github.com/aalmiray/7369b977a68baca32e13)
+The tricky part: find versions that work together.
+
+[Gradle JRuby plug-in](http://jruby-gradle.org)
+
+Note if you are still forced to use JDK7:
+In our beta testing of this feature, users on JDK7 may need to increase their available "PermGen" space for more complex projects via the gradle.properties setting of: org.gradle.jvmargs="-XX:MaxPermSize=512m"
+
+### Execute architecture tests
 [jQAssistant](http://jqassistant.org)
 
 [Kontext E Plug-ins for jQAssistant](https://github.com/kontext-e/jqassistant-plugins)
