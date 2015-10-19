@@ -23,10 +23,20 @@ But the diagrams are just pictures (or text to be precise), not models. You cann
 ## Make it better
 
 ### Make a model of Package Diagrams
-[MPS language for PlantUML](https://github.com/kontext-e/mps-plantuml)
+Not so surprising my first goal was to make a model out of the plain text. Being an MPS guy,
+naturally my first choice was to create and use a Domain Specific Language and create textual models with it.
+I re-used the [PlantUML](http://plantuml.com/) concrete syntax and published a first prototype of the
+[MPS language for PlantUML](https://github.com/kontext-e/mps-plantuml) to GitHub.
 
+But an architecture documentation does not only consist of diagrams. Equally important is a description
+of the building blocks, discussions on design decisions and so on. 
 
 ### Bring the documentation to the same platform
+The models and the documentation can only be combined if they are on the same platform. So I also had to bring
+the documentation into the MPS PlantUML model. Therefore another DSL is needed in which the documentation can
+be written. There exist lots of markup languages which provide excellent rendering results, e.g. the most famous LaTeX.
+But for my experiments I chose the new shooting star [Asciidoc](http://asciidoc.org/)
+
 [MPS language for Asciidoc](https://github.com/kontext-e/mps-asciidoc)
 
 ### Join both
@@ -34,6 +44,9 @@ But the diagrams are just pictures (or text to be precise), not models. You cann
 
 
 ### Use an accepted template for Architecture Documentation: arc42
+There is a good template for this
+known as [arc42](http://confluence.arc42.org/display/LANDINGZON/landing+zone). 
+
 [Asciidoc version of arc42 template](https://github.com/arc42/arc42-template)
 
 
