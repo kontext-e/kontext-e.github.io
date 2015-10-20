@@ -2,7 +2,7 @@ layout: post
 title: Physical Units as extension of Java types
 description: "Physical Units as extension of Java types"
 author: jens_nerche
-tags: [MPS, Java, Language Workbench, arc42, Asciidoc, PlantUML, Continuous Integration, jQAssistant, Architecture, Test]
+tags: [MPS, Java, Language Workbench, arc42, Asciidoc, PlantUML, Continuous Integration, jQAssistant, Neo4j, Cypher, Architecture, Test]
 
 
 ## Current state
@@ -38,25 +38,38 @@ be written. There exist lots of markup languages which provide excellent renderi
 But for my experiments I chose the new shooting star [Asciidoc](http://asciidoc.org/) for several reasons which 
 become clear down below.
 
-[MPS language for Asciidoc](https://github.com/kontext-e/mps-asciidoc)
+For this I created the [MPS language for Asciidoc](https://github.com/kontext-e/mps-asciidoc). Models of this
+language were compiled to Asciidoc files which can be directly used by Asciidoc text processors like
+[Asciidoctor](http://asciidoctor.org). A nice thing about Asciidoctor is that it can also handle embedded
+diagrams using [Asciidoctor Diagram](http://asciidoctor.org/docs/asciidoctor-diagram/). Also PlantUML is supported.
 
-asciidoc-diagram
-
-### Join both
-[MPS project for Executable Architecture Documentation](https://github.com/kontext-e/mps-ead)
-
-
-### Use an accepted template for Architecture Documentation: arc42
-There is a good template for this
-known as [arc42](http://confluence.arc42.org/display/LANDINGZON/landing+zone). 
-
+### Template for Architecture Documentation: arc42
+There is a good template for documenting a software architecture:
+[arc42](http://confluence.arc42.org/display/LANDINGZON/landing+zone). 
+In the download side there are several versions. But the most interesting resides on GitHub:
 [Asciidoc version of arc42 template](https://github.com/arc42/arc42-template)
+This one comes with a [Gradle](http://gradle.org) build configuration which makes other formats
+like HTML, Markdown, and docx. Rumors say that also LaTeX may be supported in the future.
+
+I imported the arc42 Asciidoc files into MPS in an Asciidoc model. Chapter 5 "Building Block View" is the one
+where the package diagrams fit in. But there is also Chapter 9 "Design Decisions". Some Design Decisions
+have consequences in the code that could be monitored easily. Let's take the example Logging Framework. After
+discussing the alternatives and making a decision for e.g. log4j, a new design constraint has to be put in place
+"do not use any class of java.util.logging".
+
+### jQAssistant, Neo4j and Cypher
+[Neo4j](http://neo4j.com/)
+
+[jQAssistant](http://jqassistant.org)
+
+[Kontext E Plug-ins for jQAssistant](https://github.com/kontext-e/jqassistant-plugins)
+
+### Join all
+[MPS project for Executable Architecture Documentation](https://github.com/kontext-e/mps-ead)
 
 
 ### Integrate into Gradle build
 [Installing and Using the Asciidoctor Gradle Plugin](http://asciidoctor.org/docs/asciidoctor-gradle-plugin/)
-
-[Asciidoctor Diagram](http://asciidoctor.org/docs/asciidoctor-diagram/)
 
 [Gist with example of integrating Asciidoctor in Gradle](https://gist.github.com/aalmiray/7369b977a68baca32e13)
 The tricky part: find versions that work together.
@@ -67,13 +80,13 @@ Note if you are still forced to use JDK7:
 In our beta testing of this feature, users on JDK7 may need to increase their available "PermGen" space for more complex projects via the gradle.properties setting of: org.gradle.jvmargs="-XX:MaxPermSize=512m"
 
 ### Execute architecture tests
-[jQAssistant](http://jqassistant.org)
 
-[Kontext E Plug-ins for jQAssistant](https://github.com/kontext-e/jqassistant-plugins)
 
-[Neo4j](http://neo4j.com/)
 
+### 
 
 ## Vision
 Give the software architects the most flexible and powerful tool for defining an architecture and crafting it into code.
 The combination of MPS, jQAssistant, and Neo4j is the best match for this. 
+Asciidoc, PlantUML, arc42
+
