@@ -5,7 +5,7 @@ author: jens_nerche
 tags: [MPS, Java, Language Workbench, arc42, Asciidoc, PlantUML, Continuous Integration, jQAssistant, Neo4j, Cypher, Architecture, Test]
 
 
-## Current state
+## Previous state
 In a former blog post
 [How to keep architecture and it's documentation in sync](http://techblog.kontext-e.de/keeping-architecture-and-doc-in-sync/)
 I described how you could 'execute' an architecture documentation as a test.
@@ -58,11 +58,12 @@ discussing the alternatives and making a decision for e.g. log4j, a new design c
 "do not use any class of java.util.logging".
 
 ### jQAssistant, Neo4j and Cypher
-[Neo4j](http://neo4j.com/)
+For this kind of rules was [jQAssistant](http://jqassistant.org) created. I wrote already 
+[some posts](http://techblog.kontext-e.de/tags/#jQAssistant) about
+it and also about the [Kontext E Plug-ins for jQAssistant](https://github.com/kontext-e/jqassistant-plugins).
 
-[jQAssistant](http://jqassistant.org)
-
-[Kontext E Plug-ins for jQAssistant](https://github.com/kontext-e/jqassistant-plugins)
+jQAssistant is based on [Neo4j](http://neo4j.com/). The query language of Neo4j is [Cypher](http://neo4j.com/docs/stable/cypher-query-lang.html).
+And - not hard to guess - I did [MPS language for Cypher](https://github.com/jensnerche/mps-cypherquerylanguage).
 
 ### Join all
 [MPS project for Executable Architecture Documentation](https://github.com/kontext-e/mps-ead)
@@ -83,7 +84,15 @@ In our beta testing of this feature, users on JDK7 may need to increase their av
 
 
 
-### 
+### Current state
+many building bricks
+can be used in different configs, e.g. without MPS as text only 
+
+### The Future
+lots of work
+make all the MPS languages better
+gather hands-on experience in real life projects
+
 
 ## Vision
 Give the software architects the most flexible and powerful tool for defining an architecture and crafting it into code.
