@@ -34,10 +34,13 @@ of the building blocks, discussions on design decisions and so on.
 ### Bring the documentation to the same platform
 The models and the documentation can only be combined if they are on the same platform. So I also had to bring
 the documentation into the MPS PlantUML model. Therefore another DSL is needed in which the documentation can
-be written. There exist lots of markup languages which provide excellent rendering results, e.g. the most famous LaTeX.
-But for my experiments I chose the new shooting star [Asciidoc](http://asciidoc.org/)
+be written. There exist lots of markup languages which provide excellent rendering results, e.g. the most famous (La)TeX.
+But for my experiments I chose the new shooting star [Asciidoc](http://asciidoc.org/) for several reasons which 
+become clear down below.
 
 [MPS language for Asciidoc](https://github.com/kontext-e/mps-asciidoc)
+
+asciidoc-diagram
 
 ### Join both
 [MPS project for Executable Architecture Documentation](https://github.com/kontext-e/mps-ead)
