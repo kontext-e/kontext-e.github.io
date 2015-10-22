@@ -87,22 +87,29 @@ The tricky part: find versions that work together.
 [Gradle JRuby plug-in](http://jruby-gradle.org)
 
 Note if you are still forced to use JDK7:
-In our beta testing of this feature, users on JDK7 may need to increase their available "PermGen" space for more complex projects via the gradle.properties setting of: org.gradle.jvmargs="-XX:MaxPermSize=512m"
+In our beta testing of this feature, users on JDK7 may need to increase their available "PermGen" space 
+for more complex projects via the gradle.properties setting of: org.gradle.jvmargs="-XX:MaxPermSize=512m"
 
 ### Execute architecture tests
-
+from within MPS just like unit tests were executed within an IDE
 
 
 ### Current state
+architecture documentation with tightly integrated UML models in the same documents
+(did you ever try to modify a UML model embedded in an Office word processor?)
+documentation is executable in the sense that (currently some important) rules can be checked in the build
+process directly using the architecture documentation files
+
 many building bricks
 can be used in different configs, e.g. without MPS as text only 
+all is open source or creative commons
 
 
 ### The Future
 lots of work
 make all the MPS languages better
 gather hands-on experience in real life projects
-
+find ways to check rules from other arc42 chapters
 
 ## Vision
 Give the software architects the most flexible and powerful tool for defining an architecture and crafting it into code.
