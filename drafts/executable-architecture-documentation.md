@@ -63,11 +63,20 @@ For this kind of rules was [jQAssistant](http://jqassistant.org) created. I wrot
 it and also about the [Kontext E Plug-ins for jQAssistant](https://github.com/kontext-e/jqassistant-plugins).
 
 jQAssistant is based on [Neo4j](http://neo4j.com/). The query language of Neo4j is [Cypher](http://neo4j.com/docs/stable/cypher-query-lang.html).
-And - not hard to guess - I did [MPS language for Cypher](https://github.com/jensnerche/mps-cypherquerylanguage).
+And - not hard to guess - I did the [MPS language for Cypher](https://github.com/jensnerche/mps-cypherquerylanguage).
 
 ### Join all
-[MPS project for Executable Architecture Documentation](https://github.com/kontext-e/mps-ead)
+Until now there are a lot of more or less unrelated building bricks. To join them all, some mortar is needed. 
+The mortar is the [MPS project for Executable Architecture Documentation](https://github.com/kontext-e/mps-ead).
+It combines the MPS languages for Asciidoc, PlantUML, and Cypher. Now it is possible to integrate UML diagram models 
+and Cypher query models in Asciidoc documentation models. To my knowledge, there is no other tool which combines
+good text processing, UML modeling, a software structure database, and a database client. But that's exactly the
+toolset needed by a software architect to define an architecture via models and description and check whether 
+that architecture is reflected in the code. Leave one out and it doesn't really work. Models without describing 
+text are just nice pictures. An architecture definition without automated checks on every build will sooner or later
+diverge from the code.
 
+Speaking about the automated checks: how did I achieve that?
 
 ### Integrate into Gradle build
 [Installing and Using the Asciidoctor Gradle Plugin](http://asciidoctor.org/docs/asciidoctor-gradle-plugin/)
@@ -87,6 +96,7 @@ In our beta testing of this feature, users on JDK7 may need to increase their av
 ### Current state
 many building bricks
 can be used in different configs, e.g. without MPS as text only 
+
 
 ### The Future
 lots of work
