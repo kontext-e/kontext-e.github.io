@@ -79,16 +79,30 @@ diverge from the code.
 Speaking about the automated checks: how did I achieve that?
 
 ### Integrate into Gradle build
+As described above, the Asciidoc documents serve two purposes:
+
+1. inform developers
+2. contain rules for the code
+
+So the integration into the [Gradle](http://gradle.org) build has also to do two things:
+
+1. create some user friendly format like HTML or PDF
+2. check the rules against the code
+
+For the format conversion there is the
 [Installing and Using the Asciidoctor Gradle Plugin](http://asciidoctor.org/docs/asciidoctor-gradle-plugin/)
+guide and also a
+[Gist with example of integrating Asciidoctor in Gradle](https://gist.github.com/aalmiray/7369b977a68baca32e13).
+The tricky part is to find most versions that work together.
 
-[Gist with example of integrating Asciidoctor in Gradle](https://gist.github.com/aalmiray/7369b977a68baca32e13)
-The tricky part: find versions that work together.
+Note if you are still forced to use JDK7: you may need to increase their available "PermGen" space 
+for more complex projects via the gradle.properties setting of: org.gradle.jvmargs="-XX:MaxPermSize=512m".
 
-[Gradle JRuby plug-in](http://jruby-gradle.org)
-
-Note if you are still forced to use JDK7:
-In our beta testing of this feature, users on JDK7 may need to increase their available "PermGen" space 
-for more complex projects via the gradle.properties setting of: org.gradle.jvmargs="-XX:MaxPermSize=512m"
+For the rule checking part there is jQAssistant with Kontext E plug-ins. jQAssistant can handle 
+Cypher rules embedded in adoc files out of the box, so the design rules of chapter 9 were supported directly.
+And for the chapter 5 part of the building blocks, I described in
+[How to keep architecture and it's documentation in sync](http://techblog.kontext-e.de/keeping-architecture-and-doc-in-sync/)
+how our PlantUML plug-in can be used.
 
 ### Execute architecture tests
 from within MPS just like unit tests were executed within an IDE
