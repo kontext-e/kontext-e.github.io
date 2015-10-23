@@ -104,9 +104,6 @@ And for the chapter 5 part of the building blocks, I described in
 [How to keep architecture and it's documentation in sync](http://techblog.kontext-e.de/keeping-architecture-and-doc-in-sync/)
 how our PlantUML plug-in can be used.
 
-### Execute architecture tests
-from within MPS just like unit tests were executed within an IDE
-
 
 ### Current state
 architecture documentation with tightly integrated UML models in the same documents
@@ -119,13 +116,13 @@ can be used in different configs, e.g. without MPS as text only
 all is open source or creative commons
 
 
-### The Future
+## The Future
 lots of work
 make all the MPS languages better
 gather hands-on experience in real life projects
 find ways to check rules from other arc42 chapters
+Execute architecture tests from within MPS just like unit tests were executed within an IDE - port that from the Executable Specification project
 
-## Vision
 Give the software architects the most flexible and powerful tool for defining an architecture and crafting it into code.
 The combination of MPS, jQAssistant, and Neo4j is the best match for this. 
 Asciidoc, PlantUML, arc42
