@@ -106,14 +106,26 @@ how our PlantUML plug-in can be used.
 
 
 ### Current state
-architecture documentation with tightly integrated UML models in the same documents
-(did you ever try to modify a UML model embedded in an Office word processor?)
-documentation is executable in the sense that (currently some important) rules can be checked in the build
-process directly using the architecture documentation files
+Ok, now there are lots of different building brings, loosly coupled by some mortar. But what gives us that?
+Is there a downloadable product? No. Is this the one way to make all of us happy? No.
+Are there some success stories? No. Is there at least something usable in real life projects? Maybe - didn't try that.
 
-many building bricks
-can be used in different configs, e.g. without MPS as text only 
-all is open source or creative commons
+But what is it? It's the idea. The idea to end the diverging parallelism of a documented and a really existing
+software architecture. The idea to have architectural rules defined in the architecture documentation and checked
+by the Continuous Integration build, giving not only the violations but also the section in the documentation
+containing the details. And all without repeats and with hard, navigable links between all parts. 
+Now the architecture documentation has tightly integrated UML models in the same documents - or
+did you ever try to modify a UML model embedded in an Office word processor?
+And the documentation is executable in the sense that (currently some important) rules can be checked in the build
+process directly using the architecture documentation files.
+
+I did some prototyping to show that idea. To show that it is possible, for having a starting point.
+What I showed above can be used in different configurations, e.g. without MPS as text only.
+Or you find a way to embed XMI into Asciidoc to replace PlantUML by your UML tool exports.
+Or you combine that with a Java project implemented in MPS or a C project implemented with 
+[mbeddr](http://mbeddr.com/).
+All is open source or creative commons - you can play with it, send pull requests, report issues, create own forks,
+you name it.
 
 
 ## The Future
