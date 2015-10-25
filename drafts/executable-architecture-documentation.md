@@ -129,13 +129,15 @@ you name it.
 
 
 ## The Future
-lots of work
-make all the MPS languages better
-gather hands-on experience in real life projects
-find ways to check rules from other arc42 chapters
-Execute architecture tests from within MPS just like unit tests were executed within an IDE - port that from the Executable Specification project
+There is still lots of work to do. All the MPS languages are prototypes to explore the idea. They have to
+be developed to a usable state. Also a downloadable all-in-one release is essential for someone who wants
+to try out the stuff. And of course gathering hands-on experience in real life projects to get feedback
+for the direction of the development is really needed. Then there are more chapters in the acr42 template,
+and I'm sure that some of them can also have testable rules.
+Last but not least it would be nice to execute the architecture tests from within MPS just like unit tests 
+were executed within an IDE. This already works in the [Executable Specification project](http://subs.emis.de/LNI/Proceedings/Proceedings239/319.pdf)
+(in German) and could be ported.
 
-Give the software architects the most flexible and powerful tool for defining an architecture and crafting it into code.
-The combination of MPS, jQAssistant, and Neo4j is the best match for this. 
-Asciidoc, PlantUML, arc42
+And I'm pretty sure some of you readers come up with lots of additional ideas. So let me know - in GitHub or
+via mail to jens dot nerche at kontext dash e dot de.
 
