@@ -71,7 +71,7 @@ The mortar is the [MPS project for Executable Architecture Documentation](https:
 It combines the MPS languages for Asciidoc, PlantUML, and Cypher. Now it is possible to integrate UML diagram models 
 and Cypher query models in Asciidoc documentation models. To my knowledge, there is no other tool which combines
 good text processing, UML modeling, a software structure database, and a database client. But that's exactly the
-toolset needed by a software architect to define an architecture via models and description and check whether 
+tool set needed by a software architect to define an architecture via models and description and check whether 
 that architecture is reflected in the code. Leave one out and it doesn't really work. Models without describing 
 text are just nice pictures. An architecture definition without automated checks on every build will sooner or later
 diverge from the code.
@@ -106,7 +106,7 @@ how our PlantUML plug-in can be used.
 
 
 ### Current state
-Ok, now there are lots of different building brings, loosly coupled by some mortar. But what gives us that?
+Ok, now there are lots of different building brings, loosely coupled by some mortar. But what gives us that?
 Is there a downloadable product? No. Is this the one way to make all of us happy? No.
 Are there some success stories? No. Is there at least something usable in real life projects? Maybe - didn't try that.
 
