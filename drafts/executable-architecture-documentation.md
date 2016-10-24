@@ -1,6 +1,6 @@
 layout: post
-title: Physical Units as extension of Java types
-description: "Physical Units as extension of Java types"
+title: Executable Architecture Documentation
+description: "Executable Architecture Documentation"
 author: jens_nerche
 tags: [MPS, Java, Language Workbench, arc42, Asciidoc, PlantUML, Continuous Integration, jQAssistant, Neo4j, Cypher, Architecture, Test]
 
