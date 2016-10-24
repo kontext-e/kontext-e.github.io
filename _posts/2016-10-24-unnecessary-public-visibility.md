@@ -82,6 +82,4 @@ because most likely I would add some WHERE clauses in the third step to exclude 
 uninteresting packages, or examine only some submodules. As a nice side effect, the first two steps can be
 easily transformed into jQAssistant concepts and the third one into a jQAssistant constraint.
 
-
-
 I published the [source code on GitHub](https://github.com/kontext-e/UnnecessaryPublicVisibility).
