@@ -54,6 +54,7 @@ First step: put a label 'Public' on the public methods
 
 Second step: put a label 'UsedFromDifferentPackage' on methods which are called from a different package
 
+```cypher
             MATCH
                 (t1:Type)-[:DECLARES]->(m:Method),
                 (t2:Type)-[:DECLARES]->(p:Method:Public),
@@ -63,15 +64,18 @@ Second step: put a label 'UsedFromDifferentPackage' on methods which are called 
             WHERE
                 package1.fqn <> package2.fqn
             SET p:UsedFromDifferentPackage
+```
     
 Third step: query for the methods which have no label 'UsedFromDifferentPackage'
 
+```cypher
             MATCH
                 (c:Type)-[:DECLARES]->(u:Method:Public)
             WHERE NOT
                 u:UsedFromDifferentPackage
             RETURN
                 c.fqn, u.name
+```
 
 Of course I could have done this in one more complex step. But I decided to separate the concerns in this way
 because most likely I would add some WHERE clauses in the third step to exclude public APIs, unscanned entry points,
