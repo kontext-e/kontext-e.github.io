@@ -21,11 +21,9 @@ The Service has two methods
 
 ```java
     public class Service {
-    
         public void calledFromDifferentPackage(){
             onlyCalledInPackage();
-        }
-    
+        }    
         public void onlyCalledInPackage(){}
     }
 ```
@@ -33,8 +31,7 @@ The Service has two methods
 and the Client calls one of them from a different package
 
 ```java
-    public class Client {
-    
+    public class Client {    
         public void call() {
             new Service().calledFromDifferentPackage();
         }
@@ -46,12 +43,14 @@ Now I can query for the public methods not accessed from a different package in 
 
 First step: put a label 'Public' on the public methods
 
+```cypher
             MATCH
                 (c:Type:Class)-[:DECLARES]->(m:Method)
             WHERE
                 m.visibility='public'
             SET
                 m:Public
+```
 
 Second step: put a label 'UsedFromDifferentPackage' on methods which are called from a different package
 
