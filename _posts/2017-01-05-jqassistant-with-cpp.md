@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Combine jQAssistant with C++ (sort of)
+title: Combine jQAssistant with C++ (somehow)
 description: "Quick and simple way to verify C++ module dependencies using jQAssistant"
 author: jens_nerche
 tags: [en, C++, jQAssistant]
