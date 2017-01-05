@@ -6,6 +6,9 @@ author: jens_nerche
 tags: [en, C++, jQAssistant]
 ---
 
+In this post you can read that it may surprisingly quick and simple to make use of
+jQAssistant for verifying module dependencies in C++.
+
 Over the last year I was busy developing some C++ application. As usual it starts nice and clean,
 gets into production - and evolves. Although I employed analyses tools like [Valgrind](http://valgrind.org)
 and [CPPCheck](http://cppcheck.sourceforge.net/) I missed something like [jQAssistant](http://jqassistant.org)
