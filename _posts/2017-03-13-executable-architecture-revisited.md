@@ -82,6 +82,14 @@ could look like this:
     -----
 ```
 
+It gets rendered into a UML Package Diagram:
+
+![UML Package Diagram](/images/execarc/package_diagram.png).
+
+As you noticed, the example is from the jQAssistant PlantUML plugin itself. The rendered Asciidoc
+example Building Block View chapter looks like this:
+
+![Rendered Asciidoc Building Block View](/images/execarc/rendered_asciidoc.png)
 
 ## Add the architecture documentation directory to the scan path
 
