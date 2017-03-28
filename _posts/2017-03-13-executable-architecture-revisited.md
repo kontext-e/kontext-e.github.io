@@ -53,14 +53,14 @@ Given you have a separate configuration for jQAssistant plugins:
 
 ```groovy
     configurations {
-        jqaRuntime
+        jqaRt
     }
 ```
 
 you add the PlantUML plugin this way:
 
 ```groovy
-	jqaRuntime("de.kontext-e.jqassistant.plugin:jqassistant.plugin.plantuml:1.1.4")
+	jqaRt("de.kontext-e.jqassistant.plugin:jqassistant.plugin.plantuml:1.1.4")
 ```
 
 
@@ -118,7 +118,7 @@ architecture documentation:
 ```groovy
     task(jqascan, type: JavaExec) {
       main = 'com.buschmais.jqassistant.scm.cli.Main'
-      classpath = configurations.jqaRuntime
+      classpath = configurations.jqaRt
       args 'scan'
       args '-p'
       args 'jqassistant/jqassistant.properties'
@@ -154,7 +154,10 @@ First, we need a package level as described here:
 ```xml
     <concept id="package:PackageLevel">
         <requiresConcept refId="dependency:Package"/>
-        <description>Set the level property of a package, e.g. 1 for de, 2 for de.kontext_e and so on</description>
+        <description>
+            Set the level property of a package, 
+            e.g. 1 for de, 2 for de.kontext_e and so on
+        </description>
         <cypher><![CDATA[
 			MATCH
 				(p:Java:Package)
@@ -174,7 +177,10 @@ This package levels are used to add some transitive package dependencies:
     <concept id="dependency:TransitivePackageDependencies">
         <requiresConcept refId="package:PackageLevel"/>
         <requiresConcept refId="dependency:Package"/>
-        <description>Add a DEPENDS_ON relationship to parents of a package P from other packages up to the same level of the source package.</description>
+        <description>
+            Add a DEPENDS_ON relationship to parents of a package P 
+            from other packages up to the same level of the source package.
+        </description>
         <cypher><![CDATA[
             MATCH
                 (p:Java:Package)-[:DEPENDS_ON]->(p2:Java:Package),
@@ -195,7 +201,10 @@ which come handy to find package dependencies in the wrong direction with this l
     <constraint id="dependency:WrongDirection" severity="critical">
         <requiresConcept refId="dependency:Package"/>
         <requiresConcept refId="dependency:TransitivePackageDependencies"/>
-        <description>Finds package dependencies which are in the wrong direction according to the documentation.</description>
+        <description>
+            Finds package dependencies which are in the wrong direction 
+            according to the documentation.
+        </description>
         <cypher><![CDATA[
             MATCH
                 (p1:PlantUml:Package)-[:MAY_DEPEND_ON]->(p2:PlantUml:Package),
@@ -215,7 +224,8 @@ Don't forget to add all of that to the default group:
     <group id="default">
         <includeConcept refId="package:PackageLevel"/>
         <includeConcept refId="dependency:TransitivePackageDependencies"/>
-        <includeConstraint refId="dependency:WrongDirection" severity="critical"/>
+        <includeConstraint refId="dependency:WrongDirection" 
+                           severity="critical"/>
     </group>
 
 ```
