@@ -314,6 +314,22 @@ to generate a nice set of HTML documents. There is also
 [Asciidoctor PDF](http://asciidoctor.org/docs/convert-asciidoc-to-pdf/)
 for a direct generation of PDF.
 
+## A complete example
+
+These were a lot of snippets. Therefore I created a very basic example that contains all
+to make it run but nothing else.
+You can [download the sources](https://github.com/kontext-e/uneven-modules/releases/tag/BasicSetup)
+on GitHub, explore and play around.
+
+If you do a
+
+    mvn verify
+
+you'll find four constraint violations. 
+
+Stay tune for follow up posts. They explain why the example is called "Uneven Modules"
+and what can be done for taming the architecture with jQAssistant.
+
 ## Some closing words
 
 There are of course many other arc42 chapters. Some of them are not suited to be checked automatically, but others
