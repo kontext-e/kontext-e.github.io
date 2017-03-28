@@ -137,6 +137,14 @@ architecture documentation:
 
 ```
 
+After scanning the project we get a graph like this:
+
+![Graph in Neo4j browser](/images/execarc/graph.png).
+
+That's a screenshot of the Neo4j graph browser which I pimped a little bit to make it more expressive.
+If you try it out exactly at this point, you will notice that in the original scan there is
+no dependency from scanner to store in the real architecture. This brings us directly to the
+following section.
 
 ## jQAssistant Concepts and Constraints
 
