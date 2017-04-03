@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Managing Technical Debt with arc42 and jQAssistant: Building Block Dependencies
+title: "Managing Technical Debt with arc42 and jQAssistant: Building Block Dependencies"
 description: "Making the build green again although there are dependencies in the wrong direction - and document them in the architecture documentation"
 author: jens_nerche
 tags: [en, jQAssistant, Neo4j, PlantUML, Asciidoc, arc42, Maven, Gradle, Tutorial]
 ---
 
-In the [last post](/executable-architecture-revisited) I described in detail how to use
+In the [last post](http://techblog.kontext-e.de/executable-architecture-revisited) I described in detail how to use
 the same document to check the defined against the actual architecture. If you tried 
 it out with the example project, you found some dependencies in the wrong direction.
 And perhaps also in your own projects. This time I'll show you how to handle this
@@ -184,7 +184,9 @@ RETURN
             WITH 
                 body
             MATCH 
-                (c1:Asciidoc:Cell {colnumber: 0})<-[:CONTAINS_CELLS]-(body)-[:CONTAINS_CELLS]->(c2:Asciidoc:Cell {colnumber: 1})
+                (c1:Asciidoc:Cell {colnumber: 0})
+                <-[:CONTAINS_CELLS]-(body)-[:CONTAINS_CELLS]->
+                (c2:Asciidoc:Cell {colnumber: 1})
             WITH 
                 c1, c2
             MATCH
@@ -258,7 +260,7 @@ should be gone.
 ## Some closing words
 
 If dependencies in a project got never checked, there are most like unwanted dependencies.
-Not surprising and it also hit me with the C++ project I [wrote about](/jqassistant-with-cpp)
+Not surprising and it also hit me with the C++ project I [wrote about](http://techblog.kontext-e.de/jqassistant-with-cpp)
 Breaking the build with any wrong dependency makes the build red for a long time.
 Resolving those dependencies is not a five minute task. But documenting them and 
 defining exceptions from the dependency architecture rules with exactly _the same table_
