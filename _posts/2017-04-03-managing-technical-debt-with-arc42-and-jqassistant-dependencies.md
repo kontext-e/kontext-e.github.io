@@ -6,7 +6,7 @@ author: jens_nerche
 tags: [en, jQAssistant, Neo4j, PlantUML, Asciidoc, arc42, Maven, Gradle, Tutorial]
 ---
 
-In the [last post](/executable-architecture-revisited) I described in detail how to use
+In the [last post](http://techblog.kontext-e.de/executable-architecture-revisited) I described in detail how to use
 the same document to check the defined against the actual architecture. If you tried 
 it out with the example project, you found some dependencies in the wrong direction.
 And perhaps also in your own projects. This time I'll show you how to handle this
@@ -258,7 +258,7 @@ should be gone.
 ## Some closing words
 
 If dependencies in a project got never checked, there are most like unwanted dependencies.
-Not surprising and it also hit me with the C++ project I [wrote about](/jqassistant-with-cpp)
+Not surprising and it also hit me with the C++ project I [wrote about](http://techblog.kontext-e.de/jqassistant-with-cpp)
 Breaking the build with any wrong dependency makes the build red for a long time.
 Resolving those dependencies is not a five minute task. But documenting them and 
 defining exceptions from the dependency architecture rules with exactly _the same table_
