@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Managing Technical Debt with arc42 and jQAssistant: Building Block Dependencies
+title: "Managing Technical Debt with arc42 and jQAssistant: Building Block Dependencies"
 description: "Making the build green again although there are dependencies in the wrong direction - and document them in the architecture documentation"
 author: jens_nerche
 tags: [en, jQAssistant, Neo4j, PlantUML, Asciidoc, arc42, Maven, Gradle, Tutorial]
@@ -184,7 +184,9 @@ RETURN
             WITH 
                 body
             MATCH 
-                (c1:Asciidoc:Cell {colnumber: 0})<-[:CONTAINS_CELLS]-(body)-[:CONTAINS_CELLS]->(c2:Asciidoc:Cell {colnumber: 1})
+                (c1:Asciidoc:Cell {colnumber: 0})
+                <-[:CONTAINS_CELLS]-(body)-[:CONTAINS_CELLS]->
+                (c2:Asciidoc:Cell {colnumber: 1})
             WITH 
                 c1, c2
             MATCH
