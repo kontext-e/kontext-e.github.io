@@ -12,6 +12,9 @@ my personal opinion. I hear that often
 said by [Grady Booch](https://twitter.com/Grady_Booch) and
 [Simon Brown](https://twitter.com/simonbrown). Therefore a little
 bit of architecture documentation pays off sooner or later.
+And if the information from architecture documentation is used to
+enrich the graph of scanned code, more and better constraints can
+be checked. So it is very like that the ROI is sooner, not later.
 
 As my frequent blog
 readers know, I like the toolchain of jQAssistant, Neo4j, Asciidoc, 
