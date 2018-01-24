@@ -32,6 +32,7 @@ awesome post about
 ["Building Higher-Level Abstractions of Source Code"](https://www.feststelltaste.de/building-higher-level-abstractions-of-source-code/)
 he adds the concept of "Subdomains" to the graph using this Cypher statement:
 
+```cypher
     UNWIND [
         { name: "Clinic" },
         { name: "Owner" },
@@ -48,6 +49,7 @@ he adds the concept of "Subdomains" to the graph using this Cypher statement:
             WHERE t.name CONTAINS s.name
         MERGE (t)-[:BELONGS_TO]->(s)
     RETURN s.name, t.name
+```
 
 Not very complicated and Cypher is nice to read, but I'm sure we can do better. 
 To borrow some words from the Domain Specific Languages guys: 
@@ -108,6 +110,7 @@ Since version 1.3.3 the Asciidoc plugin also imports attributes on tables, secti
 We can mark our table shown in the picture in the documentation with an attribute *label="Pattern"* 
 Then the Asciidoc source looks like this:
 
+```asciidoc
     .Design Pattern of Classes Matched by Regular Expressions
     [options="header", label="Pattern"]
     |===
@@ -116,11 +119,13 @@ Then the Asciidoc source looks like this:
     | de.kontext_e.jqassistant.*Command     | Command
     | de.kontext_e.jqassistant.*Factory     | Factory
     |===
+```
 
 To make the live easier for later Cypher queries, let's add some labels to the table cells we
 are interested in. The jQAssistant concept in Asciidoc form looks like this:
 
     
+```asciidoc
     [[structure:MarkAsciidocTypeRegex]]
     [source,cypher,role=concept]
     .Mark Asciidoc Table Cells that contain regular expressions for types that have to be marked with given labels.
@@ -143,6 +148,7 @@ are interested in. The jQAssistant concept in Asciidoc form looks like this:
         RETURN
             regexCell, labelCell
     ----
+```
 
 Don't get confused here. There are two Asciidoc directories in this made up example project:
 
@@ -165,6 +171,7 @@ with Cypher, also JavaScript, Ruby, Groovy, whatever scripting language is avail
 can be used. JavaScript works with every newer JDK out of the box, so let's use this and craft a 
 jQAssistant concept:
 
+```asciidoc
     [[structure:LabelTypesMatchedByRegex]]
     [source,js,role=concept,requiresConcepts="structure:MarkAsciidocTypeRegex"]
     .Mark types with labels matched by regex.
@@ -197,6 +204,7 @@ jQAssistant concept:
         var status = com.buschmais.jqassistant.core.analysis.api.Result.Status.SUCCESS;
         new com.buschmais.jqassistant.core.analysis.api.Result(rule, status, severity, columnNames, rows);
     ----
+```
 
 It boils down to two steps:
 
