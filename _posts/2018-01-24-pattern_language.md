@@ -69,7 +69,7 @@ has the suffix "Factory" and so on.
 Let's also assume that the Pattern Language is defined and documented in Architecture Documentation
 this way:
 
-![table screenshot](/images/pattern_language/table_screenshot.png)
+![Screenshot of Pattern Table](/images/pattern_language/table_screenshot.png)
 
 Now how can we set a Label of "Plugin" on all plugin classes, label command classes with "Command"
 and so on? As you will see, it needs only three easy steps.
