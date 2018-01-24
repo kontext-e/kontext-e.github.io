@@ -16,6 +16,8 @@ And if the information from architecture documentation is used to
 enrich the graph of scanned code, more and better constraints can
 be checked. So it is very like that the ROI is sooner, not later.
 
+## What is the idea?
+
 As my frequent blog
 readers know, I like the toolchain of jQAssistant, Neo4j, Asciidoc, 
 PlantUML, and arc42. So when I already scanned the project into
