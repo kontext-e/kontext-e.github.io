@@ -14,7 +14,7 @@ said by [Grady Booch](https://twitter.com/Grady_Booch) and
 bit of architecture documentation pays off sooner or later.
 And if the information from architecture documentation is used to
 enrich the graph of scanned code, more and better constraints can
-be checked. So it is very like that the ROI is sooner, not later.
+be checked. So it is very likely that the ROI is sooner, not later.
 
 ## What is the idea?
 
