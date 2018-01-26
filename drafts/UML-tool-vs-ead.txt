@@ -1,0 +1,88 @@
+
+
+Hello Enzo,
+some years ago I also used a dedicated UML tool (MagicDraw) for creating
+UML models. But I found it has only a limited use:
+- I use an IDE all the day and have to switch to a different tool
+(different key bindings, mouse centered instead of keyboard centered,
+another licence to request and maintain, ...)
+- hard to merge when somebody else also changed the model
+- much harder to match with existing code
+- lacks much of the comfort and andvanced features every IDE offers:
+good VCS integration, key bindings, support for Markdown, Asciidoc etc,
+- finding stuff with advanced search
+- good refactoring support
+- integrated "reporting" with "templates" to generate the Architecture
+Documentation as PDF didn't work at all and the templates had to be
+maintained by yet another tool
+- lots of stuff I've already forgotten
+
+At the and of the day the model got created at the beginning and then
+not maintained anymore so that they became useless.
+
+Much better works doing architecture documentation using the arc42
+Asciidoc template, Asciidoc-PlantUML integration and IDE integration for
+all of that. All the documentation is stored next to the source code,
+VCS integration (incl. merging) is best, all information is right at
+your fingertips in the IDE just as you need it.
+
+I wanted to explain this before I'm going to answer your feedback so you
+understand my rationale of suggesting more low end tools instead of a
+"interactive modelling tool" - whatever this means, because the IDE
+plugins render the (HTML-) views of the Asciidoc/PlantUML source so that
+it is also kind of "interactive". So to start with your first question:
+no, personally I'm not sharing your opinion that for architectures
+interactive modelling tools are the best choise. I don't know any of
+them which integrate pictures and text very well. And especially for an
+architecture documentation needs text to explain and describe. Most
+parts of any arch doc template I know are text. So Asciidoc/PlantUML is
+the best fit I think. And that explains why I don't know any interactive
+modelling tool that integrates in a living architecture workflow.
+
+XMI is basically XML. So the task would be to import XML into Neo4j. You
+could for example use jQAssistant for that, jQA comes with an XML plugin
+out of the box. As I did not look at the interactive modelling tools for
+a long time, I don't know if any of them is able to import/export
+from/to Neo4j directly. That would be to have a central database for the
+model.
+
+"interactive modelling tool for PlantUML" - as I said: I'm happy with
+IDE integration. Maybe you find something that matches your needs on the
+plantuml.com homepage: http://plantuml.com/running There are really lots
+of tools and integrations listed.
+
+Of course you could also do a kind of re-engineering as you suggested.
+jQAssistant e.g. offers the Asciidoc report as described here:
+https://github.com/jqassistant-contrib/jqassistant-asciidoc-report-plugin
+with examples here:
+https://github.com/buschmais/spring-petclinic
+But note: due to a AsciidoctorJ version conflict, the Asciidoc report
+plugin does currently not work when using my Asciidoc scanning plugin
+and vice versa. The conflict is resolved in upcoming jQA 1.4 version.
+
+Or use something like Structurizr - together with some popular template
+(Structurizr also suggests arc42 here).
+
+But this works of course only for visualizing the current state. The
+main point in my blog post is that you define the desired architecture
+and than check it via CI build - and break the build when there are
+violations. So I suggest for exploring the Asciidoc+PlantUML *report*,
+but for enforcing a defined architecture the Asciidoc+PlantUML *scanning*.
+
+I hope I could help somewhat. Despite the fact that I could not present
+a solution with an interactive modelling tool integrated in the workflow
+I described in the post, I hope I could share some of my learnings of
+working with living architecture documentation in the day-to-day job as
+a coding architect.
+
+Best regards,
+Jens
+
+
+-- 
+-  Kontext E steht für Weltoffenheit und Toleranz  -
+
+Anschrift | Kontext E GmbH | Dr.-Külz-Ring 15 | D - 01067 Dresden
+Unternehmenssitz: Dresden | Geschäftsführung: Jens Homann | Handelsregister
+Dresden: HRB 18172
+
