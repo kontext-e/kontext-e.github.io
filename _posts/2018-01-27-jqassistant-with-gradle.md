@@ -1,8 +1,10 @@
+---
 layout: post
 title: Use jQAssistant with Gradle (and other build tools)
 description: "Setup a Gradle project to use jQAssistant and additional plugins."
 author: jens_nerche
 tags: [en, Gradle, jQAssistant]
+---
 
 Ultrashort TL;DR:
 
