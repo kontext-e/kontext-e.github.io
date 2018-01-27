@@ -6,10 +6,9 @@ tags: [en, Gradle, jQAssistant]
 
 Ultrashort TL;DR:
 
-Copy [jqa.gradle](https://raw.githubusercontent.com/kontext-e/jqa-gradle/master/jqa.gradle) 
-into your project root and add this line into your build.gradle:
+Add this line into your build.gradle:
 
-    apply from: 'jqa.gradle'
+    apply from: 'https://raw.githubusercontent.com/kontext-e/jqa-gradle/master/jqa.gradle'
 
 Now you can do 
 
