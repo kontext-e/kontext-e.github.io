@@ -33,7 +33,7 @@ So I changed the plural names to singular as described in the following sections
 ## :Asciidoc:Table
 - COLUMNS -> HAS_COLUMN
 - HEADER -> HAS_HEADER
-- BODY -> HAS_BODY
+- BODY -> HAS_ROW
 - FOOTER -> HAS_FOOTER
  
 ## :Asciidoc:Row
