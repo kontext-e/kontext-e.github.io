@@ -32,9 +32,9 @@ So I changed the plural names to singular as described in the following sections
 
 ## :Asciidoc:Table
 - COLUMNS -> HAS_COLUMN
-- HEADER -> HAS_HEADER
+- HEADER -> HAS_HEADER_ROW
 - BODY -> HAS_ROW
-- FOOTER -> HAS_FOOTER
+- FOOTER -> HAS_FOOTER_ROW
  
 ## :Asciidoc:Row
 - CONTAINS_CELLS -> CONTAINS_CELL
