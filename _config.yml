@@ -46,7 +46,7 @@ markdown:    kramdown
 #highlighter: pygments
 highlighter: rouge
 
-gems:
+plugins:
   - jekyll-sitemap
 sass:
   sass_dir: _sass
