@@ -18,7 +18,7 @@ I quickly discovered that there were already efforts made to analyze C# code usi
 However, the extent of the analyzed properties was not yet enough for us to properly analyze large projects and verify their architecture etc.
 Given that the repository seemed to be abandoned (as there haven't been any updates to it in 4 years) I decided to fork it and start expanding the functionality.
 
-118 Commits later this structure is still in use. The only thing, that fundamentally changed, is that the plugin can no longer scan C# files, but instead has to be given a `*.sln(f)`-file. This is because a proper .Net solution provides the C# Code Analysis Tool with significantly more information. 
+118 Commits later this structure is still in use. The only thing, that fundamentally changed, is that the plugin can no longer scan C# files, but instead has to be given a *.sln(f)-file. This is because a proper .Net solution provides the C# Code Analysis Tool with significantly more information. 
 
 Among the features added are:
 * Support for Records and Structs
@@ -38,9 +38,9 @@ Due to the complexity of C# there are likely still bugs in the project, so I wou
 
 * Install Java 17 or higher from [Oracle](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 * Download the jQAssistant Commandline Interface Version 2.1.0 or higher from [Maven](https://repo1.maven.org/maven2/com/buschmais/jqassistant/cli/jqassistant-commandline-neo4jv5/2.5.0/jqassistant-commandline-neo4jv5-2.5.0-distribution.zip)
-* Unpack the ``.zip``-file to your desired installation directory
-* Add the ``.jqassistant.yml``-file according to the [jQAssistant User Manual](https://jqassistant.github.io/jqassistant/current/#_yaml_files)
-* Add the following lines to the ``.jqassistant.yml``
+* Unpack the .zip-file to your desired installation directory
+* Add the .jqassistant.yml-file according to the [jQAssistant User Manual](https://jqassistant.github.io/jqassistant/current/#_yaml_files)
+* Add the following lines to the .jqassistant.yml
 
 ````yaml
 jqassistant:
@@ -51,8 +51,12 @@ jqassistant:
 ````
 
 ## How to use
-* add the Path to the solution file of your project to the 'included files'-section within the `.jqassistant.yml`
-* navigate to the jqassistant.cmd file on your commandline and execute ``jqassistant.cmd scan analyze report``
+* add the Path to the solution file of your project to the 'included files'-section within the .jqassistant.yml
+* navigate to the jqassistant.cmd file on your commandline and execute 
+
+```sh
+jqassistant.cmd scan analyze report
+```
 
 ## Further Information
 For more information see:
